@@ -1,17 +1,14 @@
-# AI-Native Mod for 余晖站
+# Game × Harness Research
 
-给 [余晖站 / Yuhui Station](https://github.com/Henryhuangsice/yuhui-station) 做的一个 AI 原生 Mod：设计、Demo 和复盘。
+关于 AI Agent Harness 与 AI 游戏的研究、实验和 Demo。
 
-- 在线试玩（原版）：https://henryhuangsice.github.io/yuhui-station/
-- Demo 视频：`media/`（待补）
-- 设计与回答：[ANSWER.md](ANSWER.md)（待写）
+| 目录 | 主题 | 状态 |
+|---|---|---|
+| [q2-ai-native-mod](q2-ai-native-mod/) | 给余晖站做 AI 原生 Mod：心事邮差、AI 解签 | 进行中 |
+| [q1-harness-comparison](q1-harness-comparison/) | Claude Code / Codex / Pi / OMP 等 Harness 横向对比 | 待开始 |
 
-## 目录
+相关项目：
+- 余晖站（在线试玩）：https://henryhuangsice.github.io/yuhui-station/
+- 余晖站源码：https://github.com/Henryhuangsice/yuhui-station
 
-```
-ai-native-mod/
-├── README.md
-├── ANSWER.md      # 正式回答
-├── media/         # 录屏、截图
-└── notes/         # 实验记录、踩坑
-```
+每个目录内：`ANSWER.md` 是正式回答，`media/` 放录屏和截图，`notes/` 放实验记录。
