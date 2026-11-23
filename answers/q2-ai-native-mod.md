@@ -6,7 +6,8 @@
 
 - Demo 视频：[media/q2/demo-心事邮差与AI解签.mp4](media/q2/demo-心事邮差与AI解签.mp4)
 - 开发日志、实测数据、调用日志：[notes/](../experiments/q2-ai-native-mod/notes/)
-- 余晖站在线试玩：https://henryhuangsice.github.io/yuhui-station/
+- 余晖站在线试玩：https://henryhuangsice.github.io/yuhui-station/（线上是基础版，暂不含「心事邮差」；AI 版需要本地后端，请看上面的 demo 视频）
+- 「心事邮差」代码：[yuhui-station 的 ai-mod 分支](https://github.com/Henryhuangsice/yuhui-station/tree/ai-mod)
 
 ---
 

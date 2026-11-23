@@ -1,6 +1,6 @@
 # 开发日志：给余晖站接入 AI 原生 Mod
 
-代码：`yuhui-station` 仓库的 `ai-mod` 分支（本地）。截图：`answers/media/q2/screenshots/`。
+代码：`yuhui-station` 仓库的 [`ai-mod` 分支](https://github.com/Henryhuangsice/yuhui-station/tree/ai-mod)。截图：`answers/media/q2/screenshots/`。
 
 ## 2026-11-21 · 第一版：心事邮差 + AI 解签
 
