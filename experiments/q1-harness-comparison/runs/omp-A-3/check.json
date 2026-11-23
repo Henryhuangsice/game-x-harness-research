@@ -1,0 +1,43 @@
+{
+ "task": "A",
+ "passed": 2,
+ "total": 6,
+ "linesChanged": 17,
+ "changed": [
+  "server/aiProxy.ts",
+  "src/ai/shared.ts",
+  "src/game/game.ts"
+ ],
+ "items": [
+  {
+   "name": "tsc src",
+   "pass": false,
+   "detail": "src/game/game.ts(19,24): error TS2305: Module '\"../ai/shared\"' has no exported member 'MAX_INPUT'.\nsrc/game/game.ts(1353,113): error TS2304: Cannot find name 'AVOID_RECENT'.\n"
+  },
+  {
+   "name": "tsc server",
+   "pass": false,
+   "detail": "server/aiProxy.ts(11,24): error TS2305: Module '\"../src/ai/shared\"' has no exported member 'MAX_INPUT'.\n"
+  },
+  {
+   "name": "only expected files changed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "AVOID_RECENT exported and equals 1",
+   "pass": false,
+   "detail": "2"
+  },
+  {
+   "name": "game.ts letter request uses AVOID_RECENT",
+   "pass": true,
+   "detail": "const r = await askAI<AiLetter>({ task: 'letter', text, avoid: (this.store.data.mail.recent ?? []).slice(0, AVOID_RECENT) });"
+  },
+  {
+   "name": "server functional test runs",
+   "pass": false,
+   "detail": "Error: Build failed with 1 error:\nruns/omp-A-3/work/server/aiProxy.ts:11:23: ERROR: No matching export in \"runs/omp-A-3/work/src/ai/shared.ts\" for import \"MAX_INPUT\"\n    at failureErrorWithLog (/Users/sicehuang/Desktop/yuhui-station/node_modules/esbuild/lib/main.js:1752:15)\n    at /Users/sicehuang/D"
+  }
+ ]
+}

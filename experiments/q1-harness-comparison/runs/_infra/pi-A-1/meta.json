@@ -1,0 +1,20 @@
+{
+ "harness": "pi",
+ "task": "A",
+ "rep": "1",
+ "model": "glm-4.7-flash",
+ "started": "2026-11-21 11:31:12",
+ "phases": [
+  {
+   "phase": "start",
+   "argv0": "pi",
+   "nudge_prompt": false,
+   "exit": 0,
+   "seconds": 279.7,
+   "killed_at": null,
+   "first_change_at": null,
+   "timed_out": false,
+   "changed_after": []
+  }
+ ]
+}

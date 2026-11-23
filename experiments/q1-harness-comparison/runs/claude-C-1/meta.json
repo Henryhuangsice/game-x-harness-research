@@ -1,0 +1,40 @@
+{
+ "harness": "claude",
+ "task": "C",
+ "rep": "1",
+ "model": "glm-4.7-flash",
+ "started": "2026-11-21 13:39:24",
+ "phases": [
+  {
+   "phase": "start",
+   "argv0": "claude",
+   "nudge_prompt": false,
+   "exit": -9,
+   "seconds": 70.7,
+   "killed_at": 70.67791390419006,
+   "first_change_at": 55.56685495376587,
+   "timed_out": false,
+   "changed_after": [
+    "src/ai/shared.ts",
+    "src/game/game.ts",
+    "src/state/save.ts"
+   ]
+  },
+  {
+   "phase": "resume",
+   "argv0": "claude",
+   "nudge_prompt": true,
+   "exit": 0,
+   "seconds": 195.4,
+   "killed_at": null,
+   "first_change_at": null,
+   "timed_out": false,
+   "changed_after": [
+    "server/aiProxy.ts",
+    "src/ai/shared.ts",
+    "src/game/game.ts",
+    "src/state/save.ts"
+   ]
+  }
+ ]
+}

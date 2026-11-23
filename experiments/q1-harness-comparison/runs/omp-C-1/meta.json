@@ -1,0 +1,34 @@
+{
+ "harness": "omp",
+ "task": "C",
+ "rep": "1",
+ "model": "glm-4.7-flash",
+ "started": "2026-11-21 14:34:05",
+ "phases": [
+  {
+   "phase": "start",
+   "argv0": "omp",
+   "nudge_prompt": false,
+   "exit": -9,
+   "seconds": 1201.0,
+   "killed_at": null,
+   "first_change_at": null,
+   "timed_out": true,
+   "changed_after": []
+  },
+  {
+   "phase": "resume",
+   "argv0": "omp",
+   "nudge_prompt": true,
+   "exit": -9,
+   "seconds": 1200.2,
+   "killed_at": null,
+   "first_change_at": null,
+   "timed_out": true,
+   "changed_after": [
+    "src/ai/shared.ts",
+    "src/state/save.ts"
+   ]
+  }
+ ]
+}

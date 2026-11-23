@@ -1,0 +1,59 @@
+{
+ "task": "B",
+ "passed": 5,
+ "total": 9,
+ "linesChanged": 47,
+ "changed": [
+  "server/aiProxy.ts",
+  "src/ai/shared.ts",
+  "src/game/game.ts",
+  "src/state/save.ts"
+ ],
+ "items": [
+  {
+   "name": "tsc src",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "tsc server",
+   "pass": false,
+   "detail": "server/aiProxy.ts(76,17): error TS1127: Invalid character.\nserver/aiProxy.ts(76,29): error TS1127: Invalid character.\nserver/aiProxy.ts(76,36): error TS1127: Invalid character.\n"
+  },
+  {
+   "name": "only expected files changed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "save: memory keeps newest 3 per resident",
+   "pass": false,
+   "detail": "{}"
+  },
+  {
+   "name": "save: memory is per resident",
+   "pass": false,
+   "detail": "{}"
+  },
+  {
+   "name": "save: quest still cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "shared: AiRequest has memory field",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "game.ts letter request sends memory",
+   "pass": true,
+   "detail": "const r = await askAI<AiLetter>({ task: 'letter', text, avoid: (this.store.data.mail.recent ?? []).slice(0, 2), memory: this.store.data.mail.memory ?? {} });"
+  },
+  {
+   "name": "server functional test runs",
+   "pass": false,
+   "detail": "Error: Build failed with 1 error:\nruns/durable-C-1/work/server/aiProxy.ts:76:48: ERROR: Expected \";\" but found \"，\"\n    at failureErrorWithLog (/Users/sicehuang/Desktop/yuhui-station/node_modules/esbuild/lib/main.js:1752:15)\n    at /Users/sicehuang/Desktop/yuhui-station/node_modules/esbuild/lib/main."
+  }
+ ]
+}

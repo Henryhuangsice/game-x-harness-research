@@ -1,0 +1,24 @@
+{
+ "harness": "durable",
+ "task": "A",
+ "rep": "3",
+ "model": "glm-4.7-flash",
+ "started": "2026-11-21 14:30:38",
+ "phases": [
+  {
+   "phase": "start",
+   "argv0": "node",
+   "nudge_prompt": false,
+   "exit": 0,
+   "seconds": 76.5,
+   "killed_at": null,
+   "first_change_at": null,
+   "timed_out": false,
+   "changed_after": [
+    "server/aiProxy.ts",
+    "src/ai/shared.ts",
+    "src/game/game.ts"
+   ]
+  }
+ ]
+}

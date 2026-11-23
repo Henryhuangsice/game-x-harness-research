@@ -1,0 +1,5 @@
+{"type":"thread.started","thread_id":"01a1fdf8-b3bb-7ab2-989c-368669df6cf4"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Model metadata for `glm-4.7-flash` not found. Defaulting to fallback metadata; this can degrade performance and cause issues."}}
+{"type":"turn.started"}
+{"type":"error","message":"Selected model is at capacity. Please try a different model."}
+{"type":"turn.failed","error":{"message":"Selected model is at capacity. Please try a different model."}}

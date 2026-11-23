@@ -1,0 +1,25 @@
+{
+ "harness": "pi",
+ "task": "B",
+ "rep": "2",
+ "model": "glm-4.7-flash",
+ "started": "2026-11-21 13:02:43",
+ "phases": [
+  {
+   "phase": "start",
+   "argv0": "pi",
+   "nudge_prompt": false,
+   "exit": 0,
+   "seconds": 830.8,
+   "killed_at": null,
+   "first_change_at": null,
+   "timed_out": false,
+   "changed_after": [
+    "server/aiProxy.ts",
+    "src/ai/shared.ts",
+    "src/game/game.ts",
+    "src/state/save.ts"
+   ]
+  }
+ ]
+}

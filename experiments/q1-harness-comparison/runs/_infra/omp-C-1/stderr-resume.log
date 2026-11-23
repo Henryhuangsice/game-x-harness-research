@@ -1,0 +1,2 @@
+Error: --restore requires an interactive terminal (not --print or --mode).
+Run `omp --help` for available flags.

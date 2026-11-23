@@ -1,0 +1,88 @@
+{
+ "task": "B",
+ "passed": 8,
+ "total": 15,
+ "linesChanged": 15,
+ "changed": [
+  "src/ai/shared.ts",
+  "src/game/game.ts",
+  "src/state/save.ts"
+ ],
+ "items": [
+  {
+   "name": "tsc src",
+   "pass": false,
+   "detail": "src/game/game.ts(1229,28): error TS2554: Expected 1 arguments, but got 0.\nsrc/game/game.ts(1353,146): error TS2339: Property 'memory' does not exist on type 'MailState'.\nsrc/state/save.ts(288,34): error TS2339: Property 'memory' does not exist on type 'MailState'.\nsrc/state/save.ts(291,22): error TS"
+  },
+  {
+   "name": "tsc server",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "only expected files changed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "save functional test runs",
+   "pass": false,
+   "detail": "TypeError: Cannot read properties of undefined (reading 'item')\n    at Store.finishMail (file:///Users/sicehuang/Desktop/harness%E6%B8%B8%E6%88%8F/game-x-harness-research/q1-harness-comparison/runs/omp-B-2/work/.check/save-1795239358661.mjs:288:15)\n    at file:///Users/sicehuang/Desktop/harness%E6%B"
+  },
+  {
+   "name": "shared: AiRequest has memory field",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "game.ts letter request sends memory",
+   "pass": true,
+   "detail": "const r = await askAI<AiLetter>({ task: 'letter', text, avoid: (this.store.data.mail.recent ?? []).slice(0, 2), memory: this.store.data.mail.memory ?? {} });"
+  },
+  {
+   "name": "server: memory line present",
+   "pass": false,
+   "detail": "玩家写的是：「好久没给家里打电话了」"
+  },
+  {
+   "name": "server: keeps first 3 items per resident",
+   "pass": false,
+   "detail": "玩家写的是：「好久没给家里打电话了」"
+  },
+  {
+   "name": "server: drops unknown residents",
+   "pass": true,
+   "detail": "玩家写的是：「好久没给家里打电话了」"
+  },
+  {
+   "name": "server: drops long and non-string items",
+   "pass": false,
+   "detail": "玩家写的是：「好久没给家里打电话了」"
+  },
+  {
+   "name": "server: residents separated by ；",
+   "pass": false,
+   "detail": "玩家写的是：「好久没给家里打电话了」"
+  },
+  {
+   "name": "prompt: rule about mentioning memory",
+   "pass": false,
+   "detail": ""
+  },
+  {
+   "name": "server: no memory → no memory line",
+   "pass": true,
+   "detail": "玩家写的是：「好久没给家里打电话了」"
+  },
+  {
+   "name": "regression: avoid still works",
+   "pass": true,
+   "detail": "玩家写的是：「好久没给家里打电话了」\n最近收过这位玩家信的居民（这次请换别人）：小陈"
+  },
+  {
+   "name": "letter still generated",
+   "pass": true,
+   "detail": "{\"source\":\"ai\",\"data\":{\"item\":\"一盒没寄出的明信片\",\"to\":\"tang\",\"offer\":[\"这是一盒明信片\",\"交给老唐吧\"],\"thanks\":[\"收到了\",\"谢谢你\"],\"reply\":\"明信片我收好了，风会替你寄出去的。——老唐\"},\"ms\":7}"
+  }
+ ]
+}

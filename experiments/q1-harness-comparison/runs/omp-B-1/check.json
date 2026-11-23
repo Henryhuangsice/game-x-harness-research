@@ -1,0 +1,99 @@
+{
+ "task": "B",
+ "passed": 9,
+ "total": 17,
+ "linesChanged": 51,
+ "changed": [
+  "server/aiProxy.ts",
+  "src/ai/shared.ts",
+  "src/game/game.ts",
+  "src/state/save.ts"
+ ],
+ "items": [
+  {
+   "name": "tsc src",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "tsc server",
+   "pass": false,
+   "detail": "server/aiProxy.ts(234,81): error TS2355: A function whose declared type is neither 'undefined', 'void', nor 'any' must return a value.\n"
+  },
+  {
+   "name": "only expected files changed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "save: memory keeps newest 3 per resident",
+   "pass": true,
+   "detail": "{\"tang\":[\"物件4\",\"物件3\",\"物件2\"],\"chen\":[\"物件5\"]}"
+  },
+  {
+   "name": "save: memory is per resident",
+   "pass": true,
+   "detail": "{\"tang\":[\"物件4\",\"物件3\",\"物件2\"],\"chen\":[\"物件5\"]}"
+  },
+  {
+   "name": "save: quest still cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "shared: AiRequest has memory field",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "game.ts letter request sends memory",
+   "pass": true,
+   "detail": "const r = await askAI<AiLetter>({ task: 'letter', text, avoid: (this.store.data.mail.recent ?? []).slice(0, 2), memory: this.store.data.mail.memory ?? {} });"
+  },
+  {
+   "name": "server: memory line present",
+   "pass": false,
+   "detail": ""
+  },
+  {
+   "name": "server: keeps first 3 items per resident",
+   "pass": false,
+   "detail": ""
+  },
+  {
+   "name": "server: drops unknown residents",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "server: drops long and non-string items",
+   "pass": false,
+   "detail": ""
+  },
+  {
+   "name": "server: residents separated by ；",
+   "pass": false,
+   "detail": ""
+  },
+  {
+   "name": "prompt: rule about mentioning memory",
+   "pass": false,
+   "detail": ""
+  },
+  {
+   "name": "server: no memory → no memory line",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "regression: avoid still works",
+   "pass": false,
+   "detail": ""
+  },
+  {
+   "name": "letter still generated",
+   "pass": false,
+   "detail": "null"
+  }
+ ]
+}

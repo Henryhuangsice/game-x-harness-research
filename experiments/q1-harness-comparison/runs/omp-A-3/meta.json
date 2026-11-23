@@ -1,0 +1,24 @@
+{
+ "harness": "omp",
+ "task": "A",
+ "rep": "3",
+ "model": "glm-4.7-flash",
+ "started": "2026-11-21 12:09:22",
+ "phases": [
+  {
+   "phase": "start",
+   "argv0": "omp",
+   "nudge_prompt": false,
+   "exit": -9,
+   "seconds": 1200.3,
+   "killed_at": null,
+   "first_change_at": null,
+   "timed_out": true,
+   "changed_after": [
+    "server/aiProxy.ts",
+    "src/ai/shared.ts",
+    "src/game/game.ts"
+   ]
+  }
+ ]
+}

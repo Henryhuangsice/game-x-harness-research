@@ -1,0 +1,24 @@
+{
+ "harness": "claude",
+ "task": "A",
+ "rep": "3",
+ "model": "glm-4.7-flash",
+ "started": "2026-11-21 12:05:17",
+ "phases": [
+  {
+   "phase": "start",
+   "argv0": "claude",
+   "nudge_prompt": false,
+   "exit": 0,
+   "seconds": 129.8,
+   "killed_at": null,
+   "first_change_at": null,
+   "timed_out": false,
+   "changed_after": [
+    "server/aiProxy.ts",
+    "src/ai/shared.ts",
+    "src/game/game.ts"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "task": "A",
+ "passed": 4,
+ "total": 7,
+ "linesChanged": 14,
+ "changed": [
+  "server/aiProxy.ts",
+  "src/ai/shared.ts",
+  "src/game/game.ts"
+ ],
+ "items": [
+  {
+   "name": "tsc src",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "tsc server",
+   "pass": false,
+   "detail": "server/aiProxy.ts(108,113): error TS2304: Cannot find name 'AVOID_RECENT'.\nserver/aiProxy.ts(231,54): error TS2304: Cannot find name 'AVOID_RECENT'.\n"
+  },
+  {
+   "name": "only expected files changed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "AVOID_RECENT exported and equals 1",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "game.ts letter request uses AVOID_RECENT",
+   "pass": true,
+   "detail": "const r = await askAI<AiLetter>({ task: 'letter', text, avoid: (this.store.data.mail.recent ?? []).slice(0, AVOID_RECENT) });"
+  },
+  {
+   "name": "server keeps only 1 avoided resident",
+   "pass": false,
+   "detail": ""
+  },
+  {
+   "name": "letter still generated",
+   "pass": false,
+   "detail": "{\"source\":\"fallback\",\"data\":null,\"reason\":\"bad-request\"}"
+  }
+ ]
+}

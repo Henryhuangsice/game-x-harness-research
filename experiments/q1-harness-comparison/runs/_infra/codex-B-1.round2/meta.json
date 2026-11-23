@@ -1,0 +1,23 @@
+{
+ "harness": "codex",
+ "task": "B",
+ "rep": "1",
+ "model": "glm-4.7-flash",
+ "started": "2026-11-21 19:09:07",
+ "phases": [
+  {
+   "phase": "start",
+   "argv0": "codex",
+   "nudge_prompt": false,
+   "exit": 1,
+   "seconds": 39.1,
+   "killed_at": null,
+   "first_change_at": null,
+   "timed_out": false,
+   "changed_after": [
+    "src/state/save.ts",
+    "src/state/save.ts.backup"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+model_context_window = 200000
+# Codex → local LiteLLM bridge (Responses API) → Zhipu Anthropic-compatible endpoint, see config/litellm.yaml
+model = "glm-4.7-flash"
+model_provider = "bridge"
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+
+[model_providers.bridge]
+name = "LiteLLM bridge to Zhipu"
+base_url = "http://127.0.0.1:4011/v1"
+env_key = "LITELLM_MASTER_KEY"
+wire_api = "responses"

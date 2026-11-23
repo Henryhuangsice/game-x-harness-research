@@ -1,0 +1,15 @@
+这是一个 Vite + TypeScript 的网页小游戏仓库。请给"心事邮差"加一个功能：「居民记得你」。
+
+背景：玩家投一句烦心事，AI 把它变成一件物件（item）并挑一位居民（to）收下，玩家送达后居民写回信。现在居民不记得玩家以前送过什么。
+
+要求：
+1. src/state/save.ts：`MailState` 新增可选字段 `memory?: Record<string, string[]>`（键是居民 id，值是这位居民收到过的物件，新的在前）。`finishMail()` 在清空 quest 之前，把这次的 `item` 记到收件人 `to` 的记忆里，每位居民最多保留 3 件（只留最新的 3 件）。
+2. src/ai/shared.ts：`AiRequest` 新增可选字段 `memory?: Record<string, string[]>`。
+3. src/game/game.ts：发送 letter 请求时，带上 `memory: this.store.data.mail.memory ?? {}`。
+4. server/aiProxy.ts：
+   - readBody 要清洗 memory：只保留键是 RECIPIENTS 里的居民 id 的条目；每位居民最多 3 件；每件必须是字符串且不超过 16 个字，不合格的丢掉。
+   - 生成 letter 时，如果有记忆，在发给模型的用户消息里追加一行：`居民记得这位玩家以前送来的东西：` 后面按「居民名字：物件1、物件2」的格式列出，不同居民之间用「；」分隔（居民名字用 RECIPIENTS 里的 name）。
+   - 在 LETTER_PROMPT 的规则里加一句：如果收件人记得玩家以前送来的东西，回信里可以自然地提一句，但不要列清单。
+5. 不要改动其他行为。
+
+完成后运行 `npx tsc --noEmit` 确认类型检查通过。

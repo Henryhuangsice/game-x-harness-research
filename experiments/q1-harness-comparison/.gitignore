@@ -1,0 +1,15 @@
+tools/node_modules/
+tools/.venv/
+# local state; codex shell snapshots contain the API key
+runs/**/codex-home/
+runs/**/claude-config/
+runs/**/work/
+baseline/.git
+config/claude/
+config/omp-agent/
+config/pi-agent/
+*.sqlite*
+# nested git repos (snapshots of the yuhui-station code)
+baseline/
+runs/ref-*/
+runs/smoke/

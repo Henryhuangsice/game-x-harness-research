@@ -1,0 +1,3 @@
+Reading additional input from stdin...
+2026-11-21T10:46:56.859741Z ERROR codex_core::tools::router: error=image path `/Users/sicehuang/Desktop/harness游戏/game-x-harness-research/q1-harness-comparison/runs/codex-A-2/work` is not a file
+2026-11-21T10:46:59.191353Z ERROR codex_core::tools::router: error=unable to process image: invalid or unsupported image data

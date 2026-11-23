@@ -1,0 +1,25 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:0;background:#1e1f22;font:15px/1.45 'SF Mono',Menlo,'PingFang SC',monospace;color:#d4d4d4}
+.win{margin:0;padding:18px 22px 22px}.title{font:600 17px 'PingFang SC',-apple-system,sans-serif;color:#fff;margin-bottom:12px}
+.dots{display:flex;gap:7px;margin-bottom:12px}.dots i{width:12px;height:12px;border-radius:50%;display:block}
+.cmd{color:#7ee787;white-space:pre-wrap;word-break:break-all;margin:10px 0 4px}.cmd b{color:#8b949e;font-weight:400}
+pre{margin:0;white-space:pre-wrap;word-break:break-all;color:#e6e6e6}.err{color:#ff7b72}.ok{color:#7ee787}
+.foot{margin-top:14px;font:12px -apple-system,sans-serif;color:#8b949e}</style><div class="win">
+<div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+<div class="title">Codex 遇到非 OpenAI 模型：使用默认配置，只剩 shell 一个工具</div><div class="cmd"><b>q1-harness-comparison $</b> grep -o &#x27;&quot;message&quot;:&quot;Model metadata[^&quot;]*&quot;&#x27; runs/codex-A-1/events-start.jsonl</div><pre>&quot;message&quot;:&quot;Model metadata for `glm-4.7-flash` not found. Defaulting to fallback metadata; this can degrade performance and cause issues.&quot;</pre><div class="cmd"><b>q1-harness-comparison $</b> python3 -c &quot;import json; [print(r[&#x27;run&#x27;], r[&#x27;tools&#x27;]) for r in json.load(open(&#x27;results/runs.json&#x27;)) if r[&#x27;harness&#x27;]==&#x27;codex&#x27; and r[&#x27;task&#x27;]!=&#x27;P&#x27;]&quot;</div><pre>codex-A-1 {&#x27;bash&#x27;: 22}
+codex-A-2 {&#x27;bash&#x27;: 38}
+codex-A-3 {&#x27;bash&#x27;: 24}
+codex-B-1 {&#x27;bash&#x27;: 49}
+codex-B-2 {&#x27;bash&#x27;: 239}
+codex-C-1 {&#x27;bash&#x27;: 110}</pre><div class="cmd"><b>q1-harness-comparison $</b> python3 -c &quot;import json
+for l in open(&#x27;runs/codex-A-1/events-start.jsonl&#x27;):
+  it=json.loads(l).get(&#x27;item&#x27;) or {}
+  c=it.get(&#x27;command&#x27;,&#x27;&#x27;)
+  if it.get(&#x27;status&#x27;)==&#x27;completed&#x27; and &#x27;sed -i&#x27; in c: print(&#x27;$&#x27;, c.split(&#x27;&amp;&amp; &#x27;,1)[-1][:110])&quot;</div><pre>$ sed -i &#x27;&#x27; &#x27;/export const MAX_INPUT = 60;/a\\
+\\
+/** Number of recent recipients to avoid. The AI will skip sen
+$ sed -i &#x27;&#x27; &#x27;s/(this\\.store\\.data\\.mail\\.recent ?? \\[\\])\\.slice(0, 2)/(this.store.data.mail.recent ?? [])
+$ sed -i &#x27;&#x27; &#x27;s/\\.slice(0, 3)/\\.slice(0, AVOID_RECENT)/g&#x27; server/aiProxy.ts&quot;
+$ sed -i &#x27;&#x27; &#x27;s/from &#x27;\\&#x27;&#x27;..\\/ai\\/shared&#x27;\\&#x27;&#x27;/from &#x27;\\&#x27;&#x27;..\\/ai\\/shared&#x27;\\&#x27;&#x27;; import { AVOID_RECENT }/&#x27; src/ga
+$ sed -i &#x27;&#x27; &#x27;s/import { AVOID_RECENT }/import { AVOID_RECENT } from &#x27;\\&#x27;&#x27;..\\/ai\\/shared&#x27;\\&#x27;&#x27;;/&#x27; src/game/game.
+$ sed -i &#x27;&#x27; &#x27;s/;&quot;&#x27;$/;/&#x27;&quot;&#x27; src/game/game.ts&quot;</pre>
+<div class="foot">由 tools/evidence.py 运行上面的命令自动生成 · 模型 glm-4.7-flash · 2026-11-21/22</div></div>

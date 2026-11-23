@@ -1,0 +1,43 @@
+{
+ "task": "A",
+ "passed": 2,
+ "total": 6,
+ "linesChanged": 57,
+ "changed": [
+  "server/aiProxy.ts",
+  "src/ai/shared.ts",
+  "src/game/game.ts"
+ ],
+ "items": [
+  {
+   "name": "tsc src",
+   "pass": false,
+   "detail": "src/ai/shared.ts(46,1): error TS1131: Property or signature expected.\n"
+  },
+  {
+   "name": "tsc server",
+   "pass": false,
+   "detail": "src/ai/shared.ts(46,1): error TS1131: Property or signature expected.\n"
+  },
+  {
+   "name": "only expected files changed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "AVOID_RECENT exported and equals 1",
+   "pass": false,
+   "detail": "Error: Build failed with 1 error:\nruns/codex-A-3/work/src/ai/shared.ts:46:26: ERROR: Unexpected \"=\""
+  },
+  {
+   "name": "game.ts letter request uses AVOID_RECENT",
+   "pass": true,
+   "detail": "const r = await askAI<AiLetter>({ task: 'letter', text, avoid: (this.store.data.mail.recent ?? []).slice(0, AVOID_RECENT) });"
+  },
+  {
+   "name": "server functional test runs",
+   "pass": false,
+   "detail": "Error: Build failed with 1 error:\nruns/codex-A-3/work/src/ai/shared.ts:46:26: ERROR: Unexpected \"=\"\n    at failureErrorWithLog (/Users/sicehuang/Desktop/yuhui-station/node_modules/esbuild/lib/main.js:1752:15)\n    at /Users/sicehuang/Desktop/yuhui-station/node_modules/esbuild/lib/main.js:1211:25\n    "
+  }
+ ]
+}

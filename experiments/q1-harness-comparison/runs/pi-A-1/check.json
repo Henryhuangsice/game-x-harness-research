@@ -1,0 +1,48 @@
+{
+ "task": "A",
+ "passed": 7,
+ "total": 7,
+ "linesChanged": 10,
+ "changed": [
+  "server/aiProxy.ts",
+  "src/ai/shared.ts",
+  "src/game/game.ts"
+ ],
+ "items": [
+  {
+   "name": "tsc src",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "tsc server",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "only expected files changed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "AVOID_RECENT exported and equals 1",
+   "pass": true,
+   "detail": "1"
+  },
+  {
+   "name": "game.ts letter request uses AVOID_RECENT",
+   "pass": true,
+   "detail": "const r = await askAI<AiLetter>({ task: 'letter', text, avoid: (this.store.data.mail.recent ?? []).slice(0, AVOID_RECENT) });"
+  },
+  {
+   "name": "server keeps only 1 avoided resident",
+   "pass": true,
+   "detail": "玩家写的是：「好久没给家里打电话了」\n最近收过这位玩家信的居民（这次请换别人）：小陈"
+  },
+  {
+   "name": "letter still generated",
+   "pass": true,
+   "detail": "{\"source\":\"ai\",\"data\":{\"item\":\"一盒没寄出的明信片\",\"to\":\"tang\",\"offer\":[\"这是一盒明信片\",\"交给老唐吧\"],\"thanks\":[\"收到了\",\"谢谢你\"],\"reply\":\"明信片我收好了，风会替你寄出去的。——老唐\"},\"ms\":6}"
+  }
+ ]
+}

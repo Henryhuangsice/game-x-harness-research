@@ -1,0 +1,10 @@
+这是一个 Vite + TypeScript 的网页小游戏仓库。请完成下面这个小改动：
+
+现在"心事邮差"会让 AI 避开最近收过信的居民，但数量写死在两个地方：src/game/game.ts 里发送请求时取 `recent` 的前 2 个，server/aiProxy.ts 的 readBody 里最多保留 3 个。请把它统一成一个可配置的常量：
+
+1. 在 src/ai/shared.ts 中新增并导出 `export const AVOID_RECENT = 1;`（加注释说明含义）。
+2. src/game/game.ts 发送 letter 请求时，avoid 取 `recent` 的前 AVOID_RECENT 个。
+3. server/aiProxy.ts 的 readBody 里，avoid 最多保留 AVOID_RECENT 个。
+4. 不要改动其他行为，不要修改其他文件。
+
+完成后运行 `npx tsc --noEmit` 确认类型检查通过。

@@ -1,0 +1,39 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:0;background:#1e1f22;font:15px/1.45 'SF Mono',Menlo,'PingFang SC',monospace;color:#d4d4d4}
+.win{margin:0;padding:18px 22px 22px}.title{font:600 17px 'PingFang SC',-apple-system,sans-serif;color:#fff;margin-bottom:12px}
+.dots{display:flex;gap:7px;margin-bottom:12px}.dots i{width:12px;height:12px;border-radius:50%;display:block}
+.cmd{color:#7ee787;white-space:pre-wrap;word-break:break-all;margin:10px 0 4px}.cmd b{color:#8b949e;font-weight:400}
+pre{margin:0;white-space:pre-wrap;word-break:break-all;color:#e6e6e6}.err{color:#ff7b72}.ok{color:#7ee787}
+.foot{margin-top:14px;font:12px -apple-system,sans-serif;color:#8b949e}</style><div class="win">
+<div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+<div class="title">全部有效运行的汇总（tools/analyze.py，从事件流统计）</div><div class="cmd"><b>q1-harness-comparison $</b> python3 tools/analyze.py | awk -F&#x27;\t&#x27; &#x27;$1 !~ /-P-/ {printf &quot;%-12s %2s/%-2s %7s %5s %5s %5s %5s %5s %5s\n&quot;, $1,$2,$3,$4,$5,$6,$7,$8,$13,$14}&#x27; | sed &#x27;1s/.*/run          pass    secs calls tools edits e_err p_err retry/&#x27;</div><pre>run          pass    secs calls tools edits e_err p_err retry
+claude-A-1    7/7     81.5     9     9     5     0     0     4
+claude-A-2    7/7    101.6     4     9     5     0     0     0
+claude-A-3    7/7    129.8     3     9     5     0     0     3
+claude-B-1   14/17   488.3    10    12     7     0     0     9
+claude-B-2   13/17    96.6    10    12     7     0     0    12
+claude-C-1   13/17   266.1     9    14     7     0     0    22
+codex-A-1     4/7    151.0    13    22     0     0     0     0
+codex-A-2     3/7     60.4    15    38     0     0     0     0
+codex-A-3     4/7     42.3    14    24     0     0     0     0
+codex-B-1    11/17   123.7    28    49     0     0     0     0
+codex-B-2    14/17   813.2   154   239     0     0     0     0
+codex-C-1    10/17   409.1    54   110     0     0     0     0
+durable-A-1   7/7     73.5    23    18     6     1     1    12
+durable-A-2   4/7     26.2     8     4     0     0     1     6
+durable-A-3   7/7     76.5    26    18     6     2     0    11
+durable-B-1   9/17   716.1    58    41     8     2     1    17
+durable-B-2  13/17   188.3    29    23     7     0     1    12
+durable-C-1   5/9    109.0    38    36    13     4     0    10
+omp-A-1       7/7    129.8    31    38    10     3     0     0
+omp-A-2       7/7    761.1    34    40    14     3     0     0
+omp-A-3       2/6   1200.3    35    38     9     3     0     0
+omp-B-1       9/17   170.1    39    48    15     8     0     0
+omp-B-2       8/15  1153.9    62    66     3     3     1     0
+omp-C-1      11/17  2401.2    38    72     0     0     0     0
+pi-A-1        7/7    263.8     5     8     3     0     0     0
+pi-A-2        6/7    223.5    10     9     3     0     6     5
+pi-A-3        4/7     96.7    21    19     6     3     5     5
+pi-B-1       11/17   449.1    20    11     3     0     9     8
+pi-B-2       13/17   830.8    23    22     9     0     3     3
+pi-C-1        6/9    944.3    47    31    11     1    20    20</pre>
+<div class="foot">由 tools/evidence.py 运行上面的命令自动生成 · 模型 glm-4.7-flash · 2026-11-21/22</div></div>

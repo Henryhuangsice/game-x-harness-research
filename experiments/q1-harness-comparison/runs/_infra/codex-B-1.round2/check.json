@@ -1,0 +1,87 @@
+{
+ "task": "B",
+ "passed": 5,
+ "total": 15,
+ "linesChanged": 10,
+ "changed": [
+  "src/state/save.ts",
+  "src/state/save.ts.backup"
+ ],
+ "items": [
+  {
+   "name": "tsc src",
+   "pass": false,
+   "detail": "src/state/save.ts(290,16): error TS1005: ',' expected.\nsrc/state/save.ts(290,30): error TS1005: ',' expected.\nsrc/state/save.ts(290,40): error TS1005: ';' expected.\n"
+  },
+  {
+   "name": "tsc server",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "only expected files changed",
+   "pass": false,
+   "detail": "src/state/save.ts.backup"
+  },
+  {
+   "name": "save functional test runs",
+   "pass": false,
+   "detail": "Error: Build failed with 1 error:\nruns/codex-B-1/work/src/state/save.ts:290:15: ERROR: Expected \")\" but found \":\"\n    at failureErrorWithLog (/Users/sicehuang/Desktop/yuhui-station/node_modules/esbuild/lib/main.js:1752:15)\n    at /Users/sicehuang/Desktop/yuhui-station/node_modules/esbuild/lib/main.j"
+  },
+  {
+   "name": "shared: AiRequest has memory field",
+   "pass": false,
+   "detail": ""
+  },
+  {
+   "name": "game.ts letter request sends memory",
+   "pass": false,
+   "detail": "const r = await askAI<AiLetter>({ task: 'letter', text, avoid: (this.store.data.mail.recent ?? []).slice(0, 2) });"
+  },
+  {
+   "name": "server: memory line present",
+   "pass": false,
+   "detail": "玩家写的是：「好久没给家里打电话了」"
+  },
+  {
+   "name": "server: keeps first 3 items per resident",
+   "pass": false,
+   "detail": "玩家写的是：「好久没给家里打电话了」"
+  },
+  {
+   "name": "server: drops unknown residents",
+   "pass": true,
+   "detail": "玩家写的是：「好久没给家里打电话了」"
+  },
+  {
+   "name": "server: drops long and non-string items",
+   "pass": false,
+   "detail": "玩家写的是：「好久没给家里打电话了」"
+  },
+  {
+   "name": "server: residents separated by ；",
+   "pass": false,
+   "detail": "玩家写的是：「好久没给家里打电话了」"
+  },
+  {
+   "name": "prompt: rule about mentioning memory",
+   "pass": false,
+   "detail": ""
+  },
+  {
+   "name": "server: no memory → no memory line",
+   "pass": true,
+   "detail": "玩家写的是：「好久没给家里打电话了」"
+  },
+  {
+   "name": "regression: avoid still works",
+   "pass": true,
+   "detail": "玩家写的是：「好久没给家里打电话了」\n最近收过这位玩家信的居民（这次请换别人）：小陈"
+  },
+  {
+   "name": "letter still generated",
+   "pass": true,
+   "detail": "{\"source\":\"ai\",\"data\":{\"item\":\"一盒没寄出的明信片\",\"to\":\"tang\",\"offer\":[\"这是一盒明信片\",\"交给老唐吧\"],\"thanks\":[\"收到了\",\"谢谢你\"],\"reply\":\"明信片我收好了，风会替你寄出去的。——老唐\"},\"ms\":6}"
+  }
+ ]
+}

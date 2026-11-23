@@ -1,0 +1,13 @@
+# Codex only speaks the OpenAI Responses API; Zhipu does not offer it.
+# LiteLLM translates Codex's /v1/responses calls onto the same Anthropic-compatible Zhipu endpoint the other harnesses use.
+model_list:
+  - model_name: glm-4.7-flash
+    litellm_params:
+      model: anthropic/glm-4.7-flash
+      api_base: https://open.bigmodel.cn/api/anthropic
+      api_key: os.environ/ZHIPU_API_KEY
+litellm_settings:
+  drop_params: true
+  # Codex does not retry "model at capacity" errors at all, so the bridge retries 3 times (the same budget as Pi).
+  num_retries: 3
+  retry_after: 10

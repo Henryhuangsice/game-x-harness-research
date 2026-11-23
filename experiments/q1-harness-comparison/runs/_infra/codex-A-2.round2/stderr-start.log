@@ -1,0 +1,3 @@
+Reading additional input from stdin...
+2026-11-21T11:07:37.398442Z ERROR codex_core::tools::router: error=unsupported call: apply_patch
+2026-11-21T11:07:37.398825Z ERROR codex_core::tools::router: error=unsupported call: apply_patch

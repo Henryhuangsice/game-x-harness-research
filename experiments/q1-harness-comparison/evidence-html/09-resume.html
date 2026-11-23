@@ -1,0 +1,27 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:0;background:#1e1f22;font:15px/1.45 'SF Mono',Menlo,'PingFang SC',monospace;color:#d4d4d4}
+.win{margin:0;padding:18px 22px 22px}.title{font:600 17px 'PingFang SC',-apple-system,sans-serif;color:#fff;margin-bottom:12px}
+.dots{display:flex;gap:7px;margin-bottom:12px}.dots i{width:12px;height:12px;border-radius:50%;display:block}
+.cmd{color:#7ee787;white-space:pre-wrap;word-break:break-all;margin:10px 0 4px}.cmd b{color:#8b949e;font-weight:400}
+pre{margin:0;white-space:pre-wrap;word-break:break-all;color:#e6e6e6}.err{color:#ff7b72}.ok{color:#7ee787}
+.foot{margin-top:14px;font:12px -apple-system,sans-serif;color:#8b949e}</style><div class="win">
+<div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+<div class="title">任务 C：被 SIGKILL 之后，各家怎么接着做</div><div class="cmd"><b>q1-harness-comparison $</b> for r in claude-C-1 durable-C-1 codex-C-1; do python3 -c &quot;import json; m=json.load(open(&#x27;runs/$r/meta.json&#x27;))
+for p in m[&#x27;phases&#x27;]: print(f\&quot;{&#x27;$r&#x27;:12} {p[&#x27;phase&#x27;]:6} exit={str(p[&#x27;exit&#x27;]):3} {p[&#x27;seconds&#x27;]:6}s  killed_at={p[&#x27;killed_at&#x27;] and round(p[&#x27;killed_at…</div><pre>claude-C-1   start  exit=-9    70.7s  killed_at=71  nudge=False  changed=3 files
+claude-C-1   resume exit=0    195.4s  killed_at=None  nudge=True  changed=4 files
+durable-C-1  start  exit=-9    25.4s  killed_at=25  nudge=False  changed=3 files
+durable-C-1  resume exit=0     83.6s  killed_at=None  nudge=False  changed=4 files
+codex-C-1    start  exit=-9    37.7s  killed_at=38  nudge=False  changed=2 files
+codex-C-1    resume exit=0    371.4s  killed_at=None  nudge=True  changed=4 files</pre><div class="cmd"><b>q1-harness-comparison $</b> python3 -c &quot;import json
+for ph in [&#x27;start&#x27;,&#x27;resume&#x27;]:
+  for l in open(f&#x27;runs/claude-C-1/events-{ph}.jsonl&#x27;):
+    j=json.loads(l)
+    if j.get(&#x27;type&#x27;)==&#x27;assistant&#x27;:
+      for b in j[&#x27;message&#x27;].get(&#x27;content&#x27;,[]):
+        if b.get(&#x27;type&#x27;)==&#x27;tool_use&#x27; and b[&#x27;na…</div><pre>claude start Edit src/state/save.ts
+claude start Edit src/state/save.ts
+claude start Edit src/ai/shared.ts
+claude start Edit src/game/game.ts
+claude resume Edit server/aiProxy.ts
+claude resume Edit server/aiProxy.ts
+claude resume Edit server/aiProxy.ts</pre><div class="cmd"><b>q1-harness-comparison $</b> python3 -c &quot;import json; print(&#x27;omp --restore:&#x27;, open(&#x27;runs/_infra/omp-C-1/stderr-resume.log&#x27;).read().strip().splitlines()[0])&quot;</div><pre><span class="err">omp --restore: Error: --restore requires an interactive terminal (not --print or --mode).</span></pre>
+<div class="foot">由 tools/evidence.py 运行上面的命令自动生成 · 模型 glm-4.7-flash · 2026-11-21/22</div></div>

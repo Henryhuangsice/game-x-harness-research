@@ -1,0 +1,31 @@
+{
+ "harness": "durable",
+ "task": "C",
+ "rep": "1",
+ "model": "glm-4.7-flash",
+ "started": "2026-11-21 14:20:13",
+ "phases": [
+  {
+   "phase": "start",
+   "argv0": "node",
+   "nudge_prompt": false,
+   "exit": 0,
+   "seconds": 15.5,
+   "killed_at": null,
+   "first_change_at": null,
+   "timed_out": false,
+   "changed_after": []
+  },
+  {
+   "phase": "resume",
+   "argv0": "node",
+   "nudge_prompt": false,
+   "exit": 0,
+   "seconds": 1.0,
+   "killed_at": null,
+   "first_change_at": null,
+   "timed_out": false,
+   "changed_after": []
+  }
+ ]
+}

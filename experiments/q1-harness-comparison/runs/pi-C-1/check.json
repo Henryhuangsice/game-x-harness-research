@@ -1,0 +1,59 @@
+{
+ "task": "B",
+ "passed": 6,
+ "total": 9,
+ "linesChanged": 48,
+ "changed": [
+  "server/aiProxy.ts",
+  "src/ai/shared.ts",
+  "src/game/game.ts",
+  "src/state/save.ts"
+ ],
+ "items": [
+  {
+   "name": "tsc src",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "tsc server",
+   "pass": false,
+   "detail": "server/aiProxy.ts(61,27): error TS2304: Cannot find name 'MAX_ITEM'.\nserver/aiProxy.ts(113,36): error TS2367: This comparison appears to be unintentional because the types 'string' and 'number' have no overlap.\nserver/aiProxy.ts(114,96): error TS2304: Cannot find name 'MAX_ITEM'.\n"
+  },
+  {
+   "name": "only expected files changed",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "save: memory keeps newest 3 per resident",
+   "pass": true,
+   "detail": "{\"tang\":[\"物件4\",\"物件3\",\"物件2\"],\"chen\":[\"物件5\"]}"
+  },
+  {
+   "name": "save: memory is per resident",
+   "pass": true,
+   "detail": "{\"tang\":[\"物件4\",\"物件3\",\"物件2\"],\"chen\":[\"物件5\"]}"
+  },
+  {
+   "name": "save: quest still cleared",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "shared: AiRequest has memory field",
+   "pass": true,
+   "detail": ""
+  },
+  {
+   "name": "game.ts letter request sends memory",
+   "pass": false,
+   "detail": "task: 'letter',"
+  },
+  {
+   "name": "server functional test runs",
+   "pass": false,
+   "detail": "ReferenceError: MAX_ITEM is not defined\n    at file:///Users/sicehuang/Desktop/harness%E6%B8%B8%E6%88%8F/game-x-harness-research/q1-harness-comparison/runs/pi-C-1/work/.check/proxy-1795240791316.mjs:95:117\n    at ModuleJob.run (node:internal/modules/esm/module_job:413:25)\n    at process.processTicks"
+  }
+ ]
+}

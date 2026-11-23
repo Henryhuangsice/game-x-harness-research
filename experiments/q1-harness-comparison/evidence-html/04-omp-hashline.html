@@ -1,0 +1,19 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:0;background:#1e1f22;font:15px/1.45 'SF Mono',Menlo,'PingFang SC',monospace;color:#d4d4d4}
+.win{margin:0;padding:18px 22px 22px}.title{font:600 17px 'PingFang SC',-apple-system,sans-serif;color:#fff;margin-bottom:12px}
+.dots{display:flex;gap:7px;margin-bottom:12px}.dots i{width:12px;height:12px;border-radius:50%;display:block}
+.cmd{color:#7ee787;white-space:pre-wrap;word-break:break-all;margin:10px 0 4px}.cmd b{color:#8b949e;font-weight:400}
+pre{margin:0;white-space:pre-wrap;word-break:break-all;color:#e6e6e6}.err{color:#ff7b72}.ok{color:#7ee787}
+.foot{margin-top:14px;font:12px -apple-system,sans-serif;color:#8b949e}</style><div class="win">
+<div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+<div class="title">OMP 的 hashline 编辑：GLM 写错格式时的报错原文（omp-B-1）</div><div class="cmd"><b>q1-harness-comparison $</b> python3 -c &quot;import json
+for l in open(&#x27;runs/omp-B-1/events-start.jsonl&#x27;):
+  j=json.loads(l); m=j.get(&#x27;message&#x27;) or {}
+  if j.get(&#x27;type&#x27;)==&#x27;message_end&#x27; and m.get(&#x27;role&#x27;)==&#x27;toolResult&#x27; and m.get(&#x27;isError&#x27;) and m.get(&#x27;toolName&#x27;)==&#x27;edit&#x27;: print(&#x27;edit ✗&#x27;, m[&#x27;co…</div><pre><span class="err">edit ✗ input must begin with &quot;[PATH#HASH]&quot; on the first non-blank line for anchored edits; got: &quot;export interface MailState {&quot;. Example: &quot;[src/foo.ts#1A2B]&quot; </span>
+<span class="err">edit ✗ line 1: `PUT 1353*:` resolved a single-line block — line 1353 is a bare statement, not the opening line of a multi-line construct. For only this state</span>
+<span class="err">edit ✗ This edit anchors to lines 1364-1368 of src/game/game.ts that [src/game/game.ts#5340] never displayed (it showed a partial range, a search hit, or a f</span>
+<span class="err">edit ✗ line 1: `PUT 1353*:` resolved a single-line block — line 1353 is a bare statement, not the opening line of a multi-line construct. For only this state</span>
+<span class="err">edit ✗ Edit rejected for server/aiProxy.ts: file changed between read and edit.</span>
+<span class="err">edit ✗ Edit rejected: the file parses now but would not after this edit as written (first syntax error near line 294). It parses if, for `PUT 234.=258:` line</span>
+<span class="err">edit ✗ Edit rejected: the file parses now but would not after this edit as written (first syntax error near line 294). It parses if, for `PUT 234.=258:` line</span>
+<span class="err">edit ✗ line 1: `PUT 60*:` could not resolve a syntactic block beginning on line 60 (blank/closer line, or parse error). Use `PUT 60.=M:` with explicit lines.</span></pre>
+<div class="foot">由 tools/evidence.py 运行上面的命令自动生成 · 模型 glm-4.7-flash · 2026-11-21/22</div></div>

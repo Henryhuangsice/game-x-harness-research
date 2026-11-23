@@ -1,0 +1,27 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:0;background:#1e1f22;font:15px/1.45 'SF Mono',Menlo,'PingFang SC',monospace;color:#d4d4d4}
+.win{margin:0;padding:18px 22px 22px}.title{font:600 17px 'PingFang SC',-apple-system,sans-serif;color:#fff;margin-bottom:12px}
+.dots{display:flex;gap:7px;margin-bottom:12px}.dots i{width:12px;height:12px;border-radius:50%;display:block}
+.cmd{color:#7ee787;white-space:pre-wrap;word-break:break-all;margin:10px 0 4px}.cmd b{color:#8b949e;font-weight:400}
+pre{margin:0;white-space:pre-wrap;word-break:break-all;color:#e6e6e6}.err{color:#ff7b72}.ok{color:#7ee787}
+.foot{margin-top:14px;font:12px -apple-system,sans-serif;color:#8b949e}</style><div class="win">
+<div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+<div class="title">隐藏验收测试：真的运行改完的代码（claude-B-1 的 check.json）</div><div class="cmd"><b>q1-harness-comparison $</b> python3 -c &quot;import json; c=json.load(open(&#x27;runs/claude-B-1/check.json&#x27;)); print(&#x27;passed&#x27;, c[&#x27;passed&#x27;], &#x27;/&#x27;, c[&#x27;total&#x27;], &#x27; lines changed&#x27;, c[&#x27;linesChanged&#x27;]); [print((&#x27;PASS &#x27; if i[&#x27;pass&#x27;] else &#x27;FAIL &#x27;) + i[&#x27;name&#x27;]) for i in c[&#x27;items&#x27;]]&quot;</div><pre>passed 14 / 17  lines changed 42
+<span class="ok">PASS tsc src</span>
+<span class="ok">PASS tsc server</span>
+<span class="ok">PASS only expected files changed</span>
+<span class="ok">PASS save: memory keeps newest 3 per resident</span>
+<span class="ok">PASS save: memory is per resident</span>
+<span class="ok">PASS save: quest still cleared</span>
+<span class="ok">PASS shared: AiRequest has memory field</span>
+<span class="ok">PASS game.ts letter request sends memory</span>
+<span class="ok">PASS server: memory line present</span>
+<span class="err">FAIL server: keeps first 3 items per resident</span>
+<span class="ok">PASS server: drops unknown residents</span>
+<span class="err">FAIL server: drops long and non-string items</span>
+<span class="err">FAIL server: residents separated by ；</span>
+<span class="ok">PASS prompt: rule about mentioning memory</span>
+<span class="ok">PASS server: no memory → no memory line</span>
+<span class="ok">PASS regression: avoid still works</span>
+<span class="ok">PASS letter still generated</span></pre><div class="cmd"><b>q1-harness-comparison $</b> python3 -c &quot;import json; c=json.load(open(&#x27;runs/claude-B-1/check.json&#x27;)); print([i[&#x27;detail&#x27;] for i in c[&#x27;items&#x27;] if i[&#x27;name&#x27;]==&#x27;server: keeps first 3 items per resident&#x27;][0])&quot;</div><pre>玩家写的是：「好久没给家里打电话了」
+居民记得这位玩家以前送来的东西：老唐记得：A、B、C；小陈记得：ok</pre>
+<div class="foot">由 tools/evidence.py 运行上面的命令自动生成 · 模型 glm-4.7-flash · 2026-11-21/22</div></div>

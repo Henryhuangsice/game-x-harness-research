@@ -1,0 +1,20 @@
+{
+  "name": "tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^2.1.330",
+    "@earendil-works/pi-coding-agent": "^1.6.0",
+    "@earendil-works/pi-durable": "^1.6.0",
+    "@oh-my-pi/pi-coding-agent": "^19.0.1",
+    "@openai/codex": "^0.171.0"
+  }
+}

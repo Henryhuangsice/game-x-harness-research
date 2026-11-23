@@ -1,0 +1,5 @@
+Reading additional input from stdin...
+2026-11-21T11:55:25.820700Z ERROR codex_core::tools::router: error=unable to process image: invalid or unsupported image data
+2026-11-21T11:55:25.820911Z ERROR codex_core::tools::router: error=unable to process image: invalid or unsupported image data
+2026-11-21T11:55:25.821942Z ERROR codex_core::tools::router: error=unable to process image: invalid or unsupported image data
+2026-11-21T11:55:25.822155Z ERROR codex_core::tools::router: error=unable to process image: invalid or unsupported image data

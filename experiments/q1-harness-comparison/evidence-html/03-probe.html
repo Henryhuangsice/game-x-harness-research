@@ -1,0 +1,13 @@
+<!doctype html><meta charset="utf-8"><style>body{margin:0;background:#1e1f22;font:15px/1.45 'SF Mono',Menlo,'PingFang SC',monospace;color:#d4d4d4}
+.win{margin:0;padding:18px 22px 22px}.title{font:600 17px 'PingFang SC',-apple-system,sans-serif;color:#fff;margin-bottom:12px}
+.dots{display:flex;gap:7px;margin-bottom:12px}.dots i{width:12px;height:12px;border-radius:50%;display:block}
+.cmd{color:#7ee787;white-space:pre-wrap;word-break:break-all;margin:10px 0 4px}.cmd b{color:#8b949e;font-weight:400}
+pre{margin:0;white-space:pre-wrap;word-break:break-all;color:#e6e6e6}.err{color:#ff7b72}.ok{color:#7ee787}
+.foot{margin-top:14px;font:12px -apple-system,sans-serif;color:#8b949e}</style><div class="win">
+<div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+<div class="title">空任务（只回复&quot;好的&quot;）时，每个 harness 第一次请求带了多少 token</div><div class="cmd"><b>q1-harness-comparison $</b> python3 -c &quot;import json; [print(f\&quot;{r[&#x27;harness&#x27;]:8} input={r[&#x27;input_tokens&#x27;]:&gt;6}  cache_read={r[&#x27;cache_read_tokens&#x27;]:&gt;5}  total={r[&#x27;input_tokens&#x27;]+r[&#x27;cache_read_tokens&#x27;]:&gt;6}\&quot;) for r in json.load(open(&#x27;results/runs.json&#x27;)) if r[&#x27;task&#x27;]==&#x27;P&#x27;]&quot;</div><pre>claude   input= 10675  cache_read= 1264  total= 11939
+codex    input=   653  cache_read= 7980  total=  8633
+durable  input=   865  cache_read=   42  total=   907
+omp      input=  7163  cache_read=   42  total=  7205
+pi       input=  1171  cache_read=  221  total=  1392</pre>
+<div class="foot">由 tools/evidence.py 运行上面的命令自动生成 · 模型 glm-4.7-flash · 2026-11-21/22</div></div>
