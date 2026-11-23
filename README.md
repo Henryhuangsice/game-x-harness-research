@@ -41,6 +41,6 @@
 
 ## 相关项目
 
-- 余晖站（在线试玩）：https://henryhuangsice.github.io/yuhui-station/（线上是基础版，暂不含「心事邮差」；AI 版需要本地后端，请看 [demo 视频](answers/media/q2/demo-心事邮差与AI解签.mp4)）
+- 余晖站（在线试玩）：<https://henryhuangsice.github.io/yuhui-station/>（线上是基础版，暂不含「心事邮差」；AI 版需要本地后端，请看 [demo 视频](answers/media/q2/demo-心事邮差与AI解签.mp4)）
 - 「心事邮差」代码：[ai-mod 分支](https://github.com/Henryhuangsice/yuhui-station/tree/ai-mod)
 - 余晖站源码：https://github.com/Henryhuangsice/yuhui-station
